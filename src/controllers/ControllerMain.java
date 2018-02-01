@@ -17,13 +17,6 @@ public class ControllerMain implements ActionListener{
         this.viewMain = viewMain;
         this.views = views;
         
-        this.viewMain.jmi_productos.addActionListener(this);
-        
-         
-        
-        
-        this.viewMain.jmi_productos.setVisible(false);
-        
         this.viewMain.jmi_registrar.setVisible(true);
         
         this.viewMain.jmi_registrar.addActionListener(this);

@@ -12,16 +12,17 @@ public class Main {
     
     public static void main ( String [] car) {
         
-         JPanel views[] = new JPanel[1];
+         JPanel views[] = new JPanel[2];
        
+         ViewSistemGeneral viewsistema = new ViewSistemGeneral();
+         ControllerGeneral general = new ControllerGeneral(viewsistema,views);
+         
         ViewMain viewMain = new ViewMain();
         ControllerMain controllermain = new ControllerMain(viewMain,views);
         
        
         ModelLogin modelLogin = new ModelLogin();
         ViewLogin viewLogin = new ViewLogin();
-        
- 
         ControllerLogin controllerLogin = new ControllerLogin(viewLogin, modelLogin);
         
         
@@ -31,9 +32,8 @@ public class Main {
         
          
         
-          
           views [0] = viewLogin;
-        
+          views [1] = viewProductos;
       
        
        

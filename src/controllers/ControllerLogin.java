@@ -48,18 +48,19 @@ public class ControllerLogin implements ActionListener{
      this.viewLogin.jTextUsuario.addActionListener(this);
      this.viewLogin.jTextContrasena.addActionListener(this);
      this.viewLogin.jButtonEntrar.addActionListener(this);
+     this.viewLogin.jComboBoxCargo.addActionListener(this);
      
     }
 
    
     
-    public void acceder(String usuario,String contrasena){
+    public void acceder(String usuario,String contrasena,String cargo){
        if(this.viewLogin.jTextUsuario.getText().equals("")&&this.viewLogin.jTextUsuario.getText().equals("")){
        
        JOptionPane.showMessageDialog(viewLogin,"Datos no ingresados");
        }else{
         String camp="";
-        String sql = "SELECT * FROM usuario where usuario ='"+usuario+"' && contrasena ='"+contrasena+"'";
+        String sql = "SELECT * FROM usuario where usuario ='"+usuario+"' && contrasena ='"+contrasena+"'&& cargo='"+cargo+"'";
         
         try {
             Statement st = cn.createStatement();
@@ -70,10 +71,10 @@ public class ControllerLogin implements ActionListener{
             }
             if (camp.equals("administrador")){
             JOptionPane.showMessageDialog(viewLogin,"Datos correctos BIENVENIDO");
-            ViewSistemGeneral general = new ViewSistemGeneral();
+            ViewSistemGeneral general = new ViewSistemGeneral();            
             general.setVisible(true);
             viewLogin.setVisible(false);
-            viewmain.setVisible(false);
+            
             
             }else{
             System.out.println("Datos incorrectos");
@@ -97,15 +98,13 @@ public class ControllerLogin implements ActionListener{
         this.viewLogin.jTextContrasena.setText("");
         }
     
-    
-    
-    private void jButtonEntrarActionPerformed(){
+    public void jButtonEntrarActionPerformed(){
      
-        
+      
             String usuario =viewLogin.jTextUsuario.getText();
             String contrasena = new String(viewLogin.jTextContrasena.getText());
-            
-            acceder(usuario,contrasena);
+            String cargo =(String) viewLogin.jComboBoxCargo.getSelectedItem();
+            acceder(usuario,contrasena,cargo);
             
         }
     
@@ -115,4 +114,8 @@ public class ControllerLogin implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
        jButtonEntrarActionPerformed();
     }
+    
+    
+    
+    
 }

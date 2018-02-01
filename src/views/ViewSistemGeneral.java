@@ -7,12 +7,12 @@ package views;
 
 /**
  *
- * @author carmona
+ * @author r3n0
  */
 public class ViewSistemGeneral extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewSistemGeneral
+     * Creates new form NewJFrame
      */
     public ViewSistemGeneral() {
         initComponents();
@@ -30,8 +30,16 @@ public class ViewSistemGeneral extends javax.swing.JFrame {
         menuBar1 = new java.awt.MenuBar();
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        menuBar2 = new java.awt.MenuBar();
+        menu3 = new java.awt.Menu();
+        menu4 = new java.awt.Menu();
+        menuBar3 = new java.awt.MenuBar();
+        menu5 = new java.awt.Menu();
+        menu6 = new java.awt.Menu();
+        jl_text1 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu = new javax.swing.JMenu();
+        jmi_productos = new javax.swing.JMenuItem();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -39,16 +47,53 @@ public class ViewSistemGeneral extends javax.swing.JFrame {
         menu2.setLabel("Edit");
         menuBar1.add(menu2);
 
+        menu3.setLabel("File");
+        menuBar2.add(menu3);
+
+        menu4.setLabel("Edit");
+        menuBar2.add(menu4);
+
+        menu5.setLabel("File");
+        menuBar3.add(menu5);
+
+        menu6.setLabel("Edit");
+        menuBar3.add(menu6);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 204));
+        setForeground(new java.awt.Color(255, 51, 0));
 
-        jLabel1.setText("Bienido al sistema");
+        jl_text1.setBackground(new java.awt.Color(255, 102, 102));
+        jl_text1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jl_text1.setForeground(new java.awt.Color(0, 102, 204));
+        jl_text1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_text1.setText("Bienvenido al sistema Usuario");
+        jl_text1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jl_text1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jButton1.setText("SALIR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuBar1.setBackground(new java.awt.Color(190, 253, 253));
+
+        jMenu.setBackground(new java.awt.Color(204, 255, 204));
+        jMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 153, 0)));
+        jMenu.setText("Elige el perfil a controlar");
+        jMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jMenuActionPerformed(evt);
             }
         });
+
+        jmi_productos.setBackground(new java.awt.Color(0, 0, 255));
+        jmi_productos.setText("Productos");
+        jmi_productos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_productosActionPerformed(evt);
+            }
+        });
+        jMenu.add(jmi_productos);
+
+        jMenuBar1.add(jMenu);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,28 +101,27 @@ public class ViewSistemGeneral extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jl_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 827, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(149, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jButton1)
-                .addGap(93, 93, 93)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(161, Short.MAX_VALUE)
+                .addComponent(jl_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jMenuActionPerformed
+
+    private void jmi_productosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_productosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_productosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -105,6 +149,13 @@ public class ViewSistemGeneral extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ViewSistemGeneral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -115,10 +166,18 @@ public class ViewSistemGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JMenu jMenu;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jl_text1;
+    public javax.swing.JMenuItem jmi_productos;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
+    private java.awt.Menu menu3;
+    private java.awt.Menu menu4;
+    private java.awt.Menu menu5;
+    private java.awt.Menu menu6;
     private java.awt.MenuBar menuBar1;
+    private java.awt.MenuBar menuBar2;
+    private java.awt.MenuBar menuBar3;
     // End of variables declaration//GEN-END:variables
 }

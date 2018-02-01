@@ -39,7 +39,6 @@ public class ViewMain extends javax.swing.JFrame {
         jl_text1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu = new javax.swing.JMenu();
-        jmi_productos = new javax.swing.JMenuItem();
         jmi_registrar = new javax.swing.JMenuItem();
 
         menu1.setLabel("File");
@@ -77,10 +76,6 @@ public class ViewMain extends javax.swing.JFrame {
         jMenu.setBackground(new java.awt.Color(204, 255, 204));
         jMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 153, 0)));
         jMenu.setText("Elige el perfil a controlar");
-
-        jmi_productos.setBackground(new java.awt.Color(0, 0, 255));
-        jmi_productos.setText("Productos");
-        jMenu.add(jmi_productos);
 
         jmi_registrar.setBackground(new java.awt.Color(204, 204, 204));
         jmi_registrar.setForeground(new java.awt.Color(204, 0, 0));
@@ -161,7 +156,6 @@ public class ViewMain extends javax.swing.JFrame {
     public javax.swing.JMenu jMenu;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel jl_text1;
-    public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_registrar;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
